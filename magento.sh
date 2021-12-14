@@ -563,7 +563,7 @@ if [ "${repo_mariadb_install}" == "y" ]; then
     echo
    if [[ "${OS_DISTRO_KEY}" =~ (redhat|oracle) ]]; then
     dnf module disable -y mysql
-    dnf install -y MariaDB-server
+    dnf install -y mariadb-server
    else
     apt-get update
     apt-get install -y mariadb-server
