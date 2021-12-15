@@ -670,12 +670,12 @@ if [ "${repo_install}" == "y" ]; then
   echo
   read -e -p "  [?] Enter required PHP version: " -i "7.4" PHP_VERSION
   echo
- if [ "${OS_DISTRO_KEY}" == "redhat" ]; then
+ if [ "${OS_DISTRO_KEY}" == "oracle" ]; then
   dnf install -y ${REPO_REMI_RPM}
-  dnf -y module enable php:remi-${PHP_VERSION}
+  dnf -y module enable php:-${PHP_VERSION}
   dnf config-manager --set-enabled remi >/dev/null 2>&1
   rpm  --quiet -q remi-release
- elif [ "${OS_DISTRO_KEY}" == "oracle" ]; then
+ elif [ "${OS_DISTRO_KEY}" == "amazon" ]; then
   dnf install -y ${REPO_REMI_RPM//8/7}
   dnf config-manager --set-enabled remi >/dev/null 2>&1
   rpm  --quiet -q remi-release
