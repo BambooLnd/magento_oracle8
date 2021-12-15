@@ -23,7 +23,7 @@ MAGE_VERSION="2"
 MAGE_VERSION_FULL=$(curl -s https://api.github.com/repos/magento/magento${MAGE_VERSION}/tags 2>&1 | head -3 | grep -oP '(?<=")\d.*(?=")')
 
 # Repositories
-MARIADB_VERSION="10.5"
+MARIADB_VERSION="10.3"
 REPO_MARIADB_CFG="https://downloads.mariadb.com/MariaDB/mariadb_repo_setup"
 REPO_REMI_RPM="http://rpms.famillecollet.com/enterprise/remi-release-8.rpm"
 
@@ -36,7 +36,7 @@ PHP_PACKAGES_DEB=(cli fpm json common mysql zip lz4 gd mbstring curl xml bcmath 
 
 EXTRA_PACKAGES_RPM="autoconf snapd jq automake dejavu-fonts-common dejavu-sans-fonts libtidy libpcap libwebp gettext-devel recode gflags tbb ed lz4 libyaml libdwarf \
 bind-utils e2fsprogs svn screen gcc iptraf inotify-tools iptables smartmontools net-tools mlocate unzip vim wget curl sudo bc mailx clamav-filesystem clamav-server \
-clamav-update clamav-milter-systemd clamav-data clamav-server-systemd clamav-scanner-systemd clamav clamav-milter clamav-lib logrotate git patch ipset strace rsyslog \
+clamav-update clamav-milter-systemd clamav-data clamav-server-systemd clamav-scanner-systemd clamav clamav-milter clamav-lib logrotate git netcat patch ipset strace rsyslog \
 ncurses-devel GeoIP GeoIP-devel s3cmd geoipupdate openssl-devel ImageMagick libjpeg-turbo-utils pngcrush jpegoptim moreutils lsof net-snmp net-snmp-utils xinetd \
 python3-virtualenv python3-wheel-wheel python3-pip python3-devel ncftp postfix augeas-libs libffi-devel mod_ssl dnf-automatic sysstat libuuid-devel uuid-devel acl attr \
 iotop expect unixODBC gcc-c++"
