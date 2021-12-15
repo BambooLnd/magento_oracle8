@@ -508,14 +508,14 @@ if ! grep -q "yes" ${MAGENX_CONFIG_PATH}/sysupdate >/dev/null 2>&1 ; then
 BLUEBG "[~]    SYSTEM UPDATE AND PACKAGES INSTALLATION   [~]"
 WHITETXT "-------------------------------------------------------------------------------------"
   echo
- if [ "${OS_DISTRO_KEY}" == "redhat" ]; then
+ if [ "${OS_DISTRO_KEY}" == "oracle" ]; then
   dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
   dnf config-manager --set-enabled codeready-builder-for-rhel-8-rhui-rpms
   dnf -y install ${EXTRA_PACKAGES_RPM} ${PERL_MODULES_RPM[@]/#/perl-}
   dnf -y module reset nginx php redis varnish
   dnf -y upgrade --nobest
   echo
- elif [ "${OS_DISTRO_KEY}" == "oracle" ]; then
+ elif [ "${OS_DISTRO_KEY}" == "amazon" ]; then
   dnf install -y yum-utils
   amazon-linux-extras install epel -y
   dnf -y install ${EXTRA_PACKAGES_RPM} ${PERL_MODULES_RPM[@]/#/perl-}
