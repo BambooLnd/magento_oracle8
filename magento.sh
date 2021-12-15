@@ -263,7 +263,7 @@ fi
 # check if memory is enough
 if [[ "${OS_DISTRO_KEY}" =~ (redhat|oracle) ]]; then
   rpm --quiet -q dnf || yum install -y 'dnf*' yum-utils
-  rpm --quiet -q epel-release || dnf -y install epel-release
+  rpm --quiet -q epel-release || dnf -y install oracle-epel-release-el8
   rpm --quiet -q curl time bc bzip2 tar || dnf -y install time bc bzip2 tar
  else
   dpkg-query -l curl time bc bzip2 tar >/dev/null || { apt-get update; apt-get -y install curl time bc bzip2 tar; }
